@@ -35,7 +35,7 @@ const RowButton = ({buttonClick,rowButton,id,closeCmp}) =>{
         
         questionContext.questionDispatch({action:'changeTransBtn',data:{id,ansId}})
         const ansIdx = questionContext.questionState[id-1].ans.findIndex(ans=>ans.ansId === ansId)
-        console.log('height: ',questionContext.questionState[id-1].ans[ansIdx].transHeight);
+        console.log('height: ',questionContext.questionState[id-1].question.trans);
         
         setTranslateHeight(hDistance)
         setIsContainerActive(false)
@@ -43,6 +43,17 @@ const RowButton = ({buttonClick,rowButton,id,closeCmp}) =>{
 
         
         // .setAttribute('disabled','disabled')
+    }
+    const handleHeight = (id)=>{
+        if (translateHeight+questionContext.questionState[id-1].question.trans > 0) {
+            console.log('handleHeight----> ',(translateHeight+questionContext.questionState[id-1].question.trans) *-1);
+            
+            return (translateHeight+questionContext.questionState[id-1].question.trans) *-1
+        } else {
+            console.log('else handleHeight----> ', questionContext.questionState[id-1].question.trans);
+            
+            return questionContext.questionState[id-1].question.trans
+        }
     }
     const answerButtonArr = rowButton
     .map(((ans,idx)=> (<button key={ans.ans} 
@@ -54,7 +65,7 @@ const RowButton = ({buttonClick,rowButton,id,closeCmp}) =>{
                         onClick={()=>handleClick(ans.goTo,idx,ans.ansId,ans.queId)} 
                         ref={el => buttonRef.current[idx] = el}
                         style = { 
-                            {transform: `translate(${translateWidth}px, ${120-translateHeight}px)`,
+                            {transform: `translate(${translateWidth}px, ${questionContext.questionState[ans.queId-1].question.trans *2 }px)`,
                          }
                         }
                         >

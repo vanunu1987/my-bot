@@ -43,6 +43,8 @@ const ConversationSession = () => {
         setQuestionArr(questionArr=>[...questionArr,question])
         setAnswerArr(answerArr=>[...answerArr,ans])
         console.log('currentQuestion',currentQuestion,' id: ', id);
+        console.log('questionArr',questionArr);
+        
     } 
     const [questionArr,setQuestionArr] = useState([]);
     const [answerArr,setAnswerArr] = useState([]);

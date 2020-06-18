@@ -9,7 +9,10 @@ const initialState =
     { id : 2 ,question: {id:2,trans:0,val:'האם תרצה שאבדוק לך אם אתה זכאי להוזלה בביטוח החיים?'} , ans:[{goTo:3,ans:'כן',visible:true , ansId:1, transHeight: 0, queId:2 },{goTo:4,ans:'לא',visible:true , ansId:2, transHeight: 0, queId:2 }]},
     { id : 3 ,question: {id:3,trans:0,val:'האם קיים לך ביטוח חיים?' }, ans:[ { goTo: 5, ans:'כן' ,visible:true , ansId:1, transHeight: 0 , queId:3}, { goTo: 5, ans: 'לא' ,visible:true , ansId:2, transHeight: 0, queId:3 },{ goTo: 5, ans: 'היה לי פעם' ,visible:true , ansId:3, transHeight: 0 , queId:3}, { goTo: 5, ans: 'לא יודע מזה',visible:true , ansId:4, transHeight: 0 , queId:3}]},
     { id : 4 ,question: {id:4,trans:0,val:'תודה רבה, ולהתראות'} , ans:[{goTo:2,ans:'1' , visible:false , ansId:1, transHeight: 0, queId:4 },{goTo:2,ans:'2' ,visible:false , ansId:2, transHeight: 0 , queId:4}]},
-    { id : 5 ,question: {id:5,trans:0,val:'אוקיי, אני רואה שמגיע לך הנחה, תרצה לשמוע פרטים נוספים?'} , ans:[ { goTo: 3, ans:'כן' ,visible:true , ansId:1, transHeight: 0 , queId:5}, { goTo: 3, ans: 'לא' ,visible:true , ansId:2, transHeight: 0 , queId:5}]},
+    { id : 5 ,question: {id:5,trans:0,val:'אוקיי, אני רואה שמגיע לך הנחה, תרצה לשמוע פרטים נוספים?'} , ans:[ { goTo: 6, ans:'כן' ,visible:true , ansId:1, transHeight: 0 , queId:5}, { goTo: 6, ans: 'לא' ,visible:true , ansId:2, transHeight: 0 , queId:5}]},
+    { id : 6 ,question: {id:6,trans:0,val:' תרצה לשמוע פרטים נוספים?'} , ans:[ { goTo: 7, ans:'כן' ,visible:true , ansId:1, transHeight: 0 , queId:6}, { goTo: 7, ans: 'לא' ,visible:true , ansId:2, transHeight: 0 , queId:6}]},
+    { id : 7 ,question: {id:7,trans:0,val:' מה איכפת לך ?'} , ans:[ { goTo: 8, ans:'כן' ,visible:true , ansId:1, transHeight: 0 , queId:7}, { goTo: 8, ans: 'לא' ,visible:true , ansId:2, transHeight: 0 , queId:7}]},
+    { id : 8 ,question: {id:8,trans:0,val:' נו ביחאת דינאק !!'} , ans:[ { goTo: 8, ans:'כן' ,visible:true , ansId:1, transHeight: 0 , queId:8}, { goTo: 8, ans: 'לא' ,visible:true , ansId:2, transHeight: 0 , queId:8}]},
 ]
 
 const reducer = (state,{action,data})=>{
