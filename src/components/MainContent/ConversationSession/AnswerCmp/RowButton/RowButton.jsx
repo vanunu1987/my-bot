@@ -34,10 +34,8 @@ const RowButton = ({buttonClick,rowButton,id,closeCmp}) =>{
         
         setTranslateHeight(hDistance)
         setIsContainerActive(false)
-        setTimeout(()=>{
-            closeCmp()
+        closeCmp()
 
-        },500)
         
         // .setAttribute('disabled','disabled')
     }
@@ -52,9 +50,6 @@ const RowButton = ({buttonClick,rowButton,id,closeCmp}) =>{
                         ref={el => buttonRef.current[idx] = el}
                         style = { 
                             {transform: `translate(${translateWidth}px, ${120-translateHeight}px)`,
-                             display: 'block' ,
-                             position: 'absolute',
-                             width: '100px'  
                          }
                         }
                         >
