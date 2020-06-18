@@ -24,10 +24,15 @@ const RowButton = ({buttonClick,rowButton,id,closeCmp}) =>{
         setVisible({...falseVisibleObj, [idx]: true})
         setIsTranslateHeight(true)
         const el = buttonRef.current[idx];
+        console.log(el);
+        
         el.setAttribute('disabled','disabled')
-        const wDistance = el.getBoundingClientRect().right;
+        const width= Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+        const wDistance = width- el.getBoundingClientRect().right;
         const hDistance = el.getBoundingClientRect().top;
-        setTranslateWidth(wDistance-110)
+        setTranslateWidth(wDistance-40)
+        console.log('wDistance--> ', wDistance);
+        
         questionContext.questionDispatch({action:'changeTransBtn',data:{id,ansId}})
         const ansIdx = questionContext.questionState[id-1].ans.findIndex(ans=>ans.ansId === ansId)
         console.log('height: ',questionContext.questionState[id-1].ans[ansIdx].transHeight);
