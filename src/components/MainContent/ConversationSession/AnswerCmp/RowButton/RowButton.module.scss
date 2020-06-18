@@ -1,0 +1,29 @@
+
+.row-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    transition: all .6s;
+}
+
+.button-style {
+    width: 100px;
+    height: 40px;
+    color: #f0f0f2;
+    background-color: #5e6fed;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all .6s;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.trans {
+    position: absolute;
+    transform: translate(300px, -250px);
+}
+.inactive{
+    height: 0px;
+}
